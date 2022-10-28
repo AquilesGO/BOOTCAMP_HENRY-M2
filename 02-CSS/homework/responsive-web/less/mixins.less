@@ -1,0 +1,30 @@
+// Mixins acá
+// mixin de posición:
+.flex(@direction, @justify, @align){
+    display: flex;
+    flex-direction: @direction;
+    justify-content:@justify;
+    align-items: @align;
+// luego se llama a .flex(column, center, center) y ya solamente sera necesario pasar parámetros.
+}
+
+.rounImg(@radius) {
+    border-radius: @radius;
+}
+
+.btn(@color, @background, @border) {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: @background;
+    color: @color;
+    border-radius: @border;
+    user-select: none;
+
+    &:hover {
+        background-color: @color;
+        color: @background;
+    }
+}
