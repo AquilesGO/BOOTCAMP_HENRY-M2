@@ -26,18 +26,7 @@ npm install styled-components
 
 ---
 
-<<<<<<< HEAD
 ## **👩‍💻 EJERCICIO 1**
-=======
-## 👩‍💻 Ejercicio
-<<<<<<< HEAD
-
-Utilizando CSS Modules, tu tarea consiste en agregar estilos CSS para que los componentes queden *lindos*, puedes usar estas imágenes de referencia:
-
-<img src='../img/cards.png' width='600px'/>
-=======
->>>>>>> cc4e998294cffa41cd70608c0dff5f72c17ffe9f
->>>>>>> refactor/HW-integration_solved
 
 Tu tarea consiste en agregar estilos CSS para que los componentes de tu App de **_Rick&Morty_** queden muy _lindos!_
 

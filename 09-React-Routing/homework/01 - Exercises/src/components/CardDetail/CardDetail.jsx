@@ -1,23 +1,33 @@
 import React from "react";
+import {useParams, useNavigate} from "react-router-dom"
 import styles from "./CardDetail.module.css";
 
-export default function CardDetail() {
-  const [cruiseDetail, setCruiseDetail] = React.useState({});
-  React.useEffect(() => {
-    //eslint-disable-next-line
-    fetch(`http://localhost:3001/cruises/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCruiseDetail(data);
-      })
-      .catch((error) => console.log(error));
-    return () => setCruiseDetail({});
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
-  return (
-    <div className={styles.container}>
-      <button className={styles.buttonBack}>
+export default function CardDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  
+  const [cruiseDetail, setCruiseDetail] = React.useState({});
+
+React.useEffect(() => {
+  //eslint-disable-next-line
+  fetch(`http://localhost:3001/cruises/${id}`)
+  .then((res) => res.json())
+  .then((data) => {
+    setCruiseDetail(data);
+  })
+  .catch((error) => console.log(error));
+  return () => setCruiseDetail({});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
+
+function  backToHome (){
+  navigate ("/")
+}
+
+return (
+  <div className={styles.container}>
+      <button className={styles.buttonBack} onClick={backToHome}>
         Volver
       </button>
 

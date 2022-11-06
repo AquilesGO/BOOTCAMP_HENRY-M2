@@ -1,21 +1,37 @@
-import React from 'react'
+import React from "react";
 
 export default class Animals extends React.Component {
-  constructor (props) {
-    super()
+  constructor(props) {
+    super(props);
   }
+  // render() {
+  //   return (
+  //     <div>
+  //       {this.props.animals.map((animal) => {
+  //         return (
+  //           <div Key={animal.name}>
+  //             <h5>{animal.name}</h5>
+  //             <img src={animal.image} alt={animal.name} width="300px"/>
+  //             <br/>
+  //             <span>{animal.specie}</span>
+  //           </div>
+  //         );
+  //       })}
+  //     </div>
+  //   );
+  // }
 
-  render() {
-    const { animals } = this.props;
+// como lo hcieron en clase:
+render() {
     return (
       <div>
-        {animals.map((animal, key) => (
-          <div key={key}>
-            <h5>{animal.name}</h5>
-            <img src={animal.image} alt="img not found" width="300px" />
-            <br />
-            <span>{animal.specie}</span>
-          </div>
+        {this.props.animals.map((animal, index) => (
+            <div>
+                <h5>{animal.name}</h5>
+                <img src={animal.image} alt={animal.name} width={"300px"} />
+                <br />
+                <span>{animal.specie}</span>
+            </div>
         ))}
       </div>
     );

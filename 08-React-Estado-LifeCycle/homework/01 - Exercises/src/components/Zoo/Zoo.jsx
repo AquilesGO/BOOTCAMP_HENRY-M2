@@ -6,77 +6,122 @@ import Species from '../Species/Species';
 import './Zoo.module.css';
 
 export default function Zoo() {
-<<<<<<< HEAD
-  /* Escribe acá tu código */
-  const [zoo, setZoo] = React.useState({
-    zooName: "",
-    animals: [],
-    species: [],
-    allAnimals: [],
-  });
-
-  React.useEffect(
-    () => {
-      fetch("http://localhost:3001/zoo")
-        .then((res) => res.json())
-        .then((data) =>
-          setZoo({
-            ...zoo,
-            animals: data.animals,
-            species: data.species,
-            allAnimals: data.animals,
-          })
-        )
-        .catch((error) => console.log(error));
-    },
-    // eslint-disable-next-line
-    []
-  );
-
-  function handleInputChange(e) {
-    setZoo({
-      ...zoo,
-      zooName: e.target.value,
-    });
-  }
-
-  const handleSpecies = (e) => {
-    setZoo({
-      ...zoo,
-      animals: zoo.allAnimals.filter(
-        (a) => a.specie.toLowerCase() === e.target.value.toLowerCase()
-      ),
-    });
-  };
-
-  const handleAllSpecies = () => {
-    setZoo({
-      ...zoo,
-      animals: zoo.allAnimals,
-    });
-  };
-  return (
-    <div>
-      <label>Zoo Name:</label>
-      <input value={zoo.zooName} onChange={handleInputChange} />
-      <h1>{zoo.zooName}</h1>
-      <div>
-        <Species
-          species={zoo.species}
-          handleSpecies={handleSpecies}
-          handleAllSpecies={handleAllSpecies}
-        />
-        <Animals animals={zoo.animals} />
-      </div>
-    </div>
-  );
-}
-=======
    /* Escribe acá tu código */
-   return (
-      <div>
-         <h1>-</h1>
-      </div>
-   );
-}
->>>>>>> 7060f3d5b9b3920f216bd1745e8d9e5d6c986382
+   const [zoo, setZoo] = React.useState({
+      zooName: "",
+      animals: [],
+      species: [],
+      allAnimals: [],
+   });
+
+   React.useEffect(()=>{
+      fetch('http://localhost:3001/zoo')
+   .then((res) => res.json())
+   .then((data) =>
+      setZoo({
+         ...zoo,
+         animals: data.animals,
+         species: data.species,
+         allAnimals: data.animals,
+      })
+   )
+   .catch((error) => console.log(error));
+   },[]);
+
+   // const handleSpecies = (evento) => {
+
+   //    switch (evento.target.value){
+
+   //       case 'Mamíferos' : 
+   //          const filtroMamifero=zoo.animals.filter(
+   //             (mamifero) => mamifero.specie==="Mamíferos"
+   //          );
+   //          setZoo({...zoo,animals:filtroMamifero});
+   //          break;
+         
+   //       case 'Reptiles' : 
+   //          const filtroReptil=zoo.animals.filter(
+   //             (reptiles) => reptiles.specie==="Reptiles"
+   //          );
+   //          setZoo({...zoo,animals:filtroReptil});
+   //          break;
+
+   //       case 'Aves' : 
+   //          const filtroAve=zoo.animals.filter(
+   //             (aves) => aves.specie==="Aves"
+   //          );
+   //          setZoo({...zoo,animals:filtroAve});
+   //          break;
+   //    }
+   // }
+   
+//como se hizo en clase:
+   function handleInputChange (evento) {
+      setZoo({...zoo, zooName: evento.target.value});
+   }
+
+   function handleSpecies (evento) {
+      setZoo(
+         {...zoo, 
+            animals: zoo.allAnimals.filter(
+               animal => animal.specie === evento.target.value
+            ),
+         });
+   }
+
+   function handleAllSpecies () {
+      setZoo({
+         ...zoo,
+         animals: zoo.allAnimals,
+      });
+   }
+         // como se hizo en clase:
+      
+         return (
+            <div>
+                  <label htmlFor='nameInput'>Zoo Name:</label>
+                  <input 
+                     type= "text"
+                     name= "nameInput"
+                     onChange={handleInputChange} 
+                     value={zoo.zooName} 
+                  />
+                  <h1>{zoo.zooName}</h1> 
+      
+                  <Species
+                     species={zoo.species}
+                     handleAllSpecies={handleAllSpecies}
+                     handleSpecies={handleSpecies}
+                  />
+      
+                  <Animals 
+                     animals={zoo.animals}
+                  />
+            </div>
+         );
+   }
+
+
+   // return (
+   //    <div>
+   //       <label>Zoo Name:</label>
+   //       <input onChange={handleInputChange} value={zoo.zooName} ></input>
+   //       <h1>{zoo.zooName}</h1>
+
+   //       <Species
+   //          species={zoo.species}
+   //          handleAllSpecies={handleAllSpecies}
+   //          handleSpecies={handleSpecies}
+   //       />
+   //       <Animals 
+   //          animals={zoo.animals}
+   //       />
+   //    </div>
+   // );
+
+
+
+
+
+
+
