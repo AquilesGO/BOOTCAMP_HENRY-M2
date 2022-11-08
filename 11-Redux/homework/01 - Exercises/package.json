@@ -1,7 +1,7 @@
 {
-  "name": "11-redux-vanilla-js",
+  "name": "11-redux-vanilla",
   "version": "1.0.0",
-  "description": "",
+  "description": "45 minutos",
   "scripts": {
     "start": "webpack -w"
   },
@@ -11,5 +11,8 @@
     "redux": "^4.0.5",
     "webpack": "^5.31.0",
     "webpack-cli": "^4.6.0"
-  }
+  },
+  "main": "webpack.config.js",
+  "devDependencies": {},
+  "keywords": []
 }

@@ -195,15 +195,7 @@ const [inputs, setInputs] = React.useState({
 3. Conecta el estado con el formulario. Para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
 
 ```jsx
-<<<<<<< HEAD
 <input name='name' value={inputs.name} />
-=======
-<<<<<<< HEAD
-<input name="name" value={inputs.name} />
-=======
-<input name="name" value={inputs.inputs.name} />
->>>>>>> 20072b5d50d7b3218952a7356c95a322ff25e659
->>>>>>> refactor/HW-integration_solved
 ```
 
 4. Crea la función **handleChange** antes del return. Esta función recibe un `evento` como parámetro y dentro de ella haz lo siguiente:
@@ -242,23 +234,11 @@ a) Declara una variable llamada `errors` y que su valor sea un objeto vacío.
 
 b) Valida cada input del formulario que viene del objeto **inputs** que se recibe como parámetro en la función:
 
-<<<<<<< HEAD
 -  En el input **name**, si este campo está vacío, agrega la propiedad name al objeto **errors** en donde su valor sea "Se requiere un nombre".
 -  En el input **email**, valida si el email que ingresa el usuario coincide con el formato regex de la constante `regexEmail`, aplicándole a esta el método `test()` y dentro de sus paréntesis coloca `inputs.email`; agrega la propiedad email al objeto **errors** en donde su valor sea "Debe ser un correo electrónico".
 -  En el input **phone**, valida si el phone que ingresa el usuario es un número positivo; agrega la propiedad phone al objeto **errors** en donde su valor sea "Sólo números positivos".
 -  En el input **subject**, si este campo está vacío, agrega la propiedad subject al objeto **errors** en donde su valor sea "Se requiere un asunto".
 -  En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea "Se requiere un mensaje".
-=======
-- En el input **name**, si este campo está vacío, agrega la propiedad name al objeto **errors** en donde su valor sea "Se requiere un nombre".
-<<<<<<< HEAD
-- En el input **email**, valida si el email que ingresa el usuario coincide con el formato regex de la constante `regexEmail`, aplicándole a esta el método `test()` y dentro de sus paréntesis coloca `inputs.email`; agrega la propiedad email al objeto **errors** en donde su valor sea "Debe ser un correo electrónico".
-=======
-- En el input **email**, valida si el email que ingresa el usuario coincide con el regex de la constante `regexEmail`, aplicándole el método `test()` y dentro de sus paréntesis coloca `inputs.email`; agrega la propiedad email al objeto **errors** en donde su valor sea "Debe ser un correo electrónico".
->>>>>>> 20072b5d50d7b3218952a7356c95a322ff25e659
-- En el input **phone**, valida si el phone que ingresa el usuario es un número positivo; agrega la propiedad phone al objeto **errors** en donde su valor sea "Sólo números positivos".
-- En el input **subject**, si este campo está vacío, agrega la propiedad subject al objeto **errors** en donde su valor sea "Se requiere un asunto".
-- En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea "Se requiere un mensaje".
->>>>>>> refactor/HW-integration_solved
 
 Ejemplo:
 
@@ -305,17 +285,8 @@ e) Debes informar a los usuarios que tiene errores en los inputs. Para ello, haz
 <input className={errors.name && 'warning'}>
 ```
 
-<<<<<<< HEAD
 3. Debajo de cada input (si existe un error) agrega una etiqueta `p` debajo, en el que su texto sea la propiedad del objeto errors de acuerdo al input que te encuentres validando.
 4. Agrega en la etiqueta **p** el atributo className y asígnale la clase `'danger'`.
-=======
-- Debajo de cada input (si existe un error) agrega una etiqueta `p` debajo, en el que su texto sea la propiedad del objeto errors de acuerdo al input que te encuentres validando.
-<<<<<<< HEAD
-- Agrega en la etiqueta **p** el atributo className y asígnale la clase `'danger'`.
-=======
-- Crea agrega en la etiqueta **p** el atributo className y asígnale la clase `'danger'`.
->>>>>>> 20072b5d50d7b3218952a7356c95a322ff25e659
->>>>>>> refactor/HW-integration_solved
 
 Ejemplo:
 
@@ -340,17 +311,8 @@ Ejemplo:
 1. Define una función llamada `handleSubmit` que reciba un **evento** como parámetro. En ella realizarás la lógica que ejecutará el formulario cuando el usuario de click en el botón **Enviar**.
 2. Dentro de la función:
 
-<<<<<<< HEAD
 -  Utiliza el método `preventDefault()` del parámetro **evento** para prevenir que el formulario se envíe por defecto.
 -  Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); **en caso contrario**, muestra un alert con otro mensaje, por ejemplo, "Debe llenar todos los campos".
-=======
-- Utiliza el método `preventDefault()` del parámetro **evento** para prevenir que el formulario se envíe por defecto.
-<<<<<<< HEAD
-- Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); **en caso contrario**, muestra un alert con otro mensaje, por ejemplo, "Debe llenar todos los campos".
-=======
-- Convierte el estado **errors** en un array para medir su longitud, si es igual a 0, muestra un alert con un mensaje, por ejemplo, "Datos completos" y setea los estados **inputs** y **errors** en su estado original (recuerda que `errors` tiene la función validate); en caso contrario, muestra un alert con otro mensaje, por ejemplo, "Debe llenar todos los campos".
->>>>>>> 20072b5d50d7b3218952a7356c95a322ff25e659
->>>>>>> refactor/HW-integration_solved
 
 3. Crea el atributo `onSubmit` a la etiqueta **form** y asígnale la función **handleSubmit**.
 
